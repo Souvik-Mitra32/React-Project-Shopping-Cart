@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone",
+    "price": 74999,
+    "imgUrl": "/images/iphone.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Google",
+    "price": 57999,
+    "imgUrl": "/images/google.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Realme",
+    "price": 26999,
+    "imgUrl": "/images/realme.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Samsung",
+    "price": 39999,
+    "imgUrl": "/images/samsung.jpg"
+  }
+]
