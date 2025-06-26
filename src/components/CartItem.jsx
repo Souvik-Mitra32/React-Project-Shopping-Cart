@@ -13,9 +13,11 @@ export function CartItem({ id, quantity }) {
       <img
         src={imgUrl}
         alt="google phone"
-        height="75px"
-        width="125px"
-        style={{ objectFit: "cover" }}
+        style={{
+          objectFit: "cover",
+          width: "min(25%, 125px)",
+          aspectRatio: "5 / 3",
+        }}
       />
       <div className="me-auto">
         <div className="d-flex flex-column" style={{ gap: ".25rem" }}>
