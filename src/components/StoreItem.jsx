@@ -7,7 +7,7 @@ export function StoreItem({ id, name, price, imgUrl }) {
   const { getItemQuantity, increaseQuantity, decreaseQuantity, removeItem } =
     useShoppingCart();
   return (
-    <Card>
+    <Card className="h-100">
       <Card.Img
         variant="top"
         src={imgUrl}
@@ -19,25 +19,29 @@ export function StoreItem({ id, name, price, imgUrl }) {
           <div className="me-auto">{name}</div>
           <div className="text-muted fs-6 ms-2">{formatCurrency(price)}</div>
         </Card.Title>
-        {getItemQuantity(id) === 0 ? (
-          <Button onClick={() => increaseQuantity(id)}>+ Add to Cart</Button>
-        ) : (
-          <div
-            className="d-flex flex-column align-items-center"
-            style={{ gap: ".5rem" }}
-          >
-            <div className="d-flex" style={{ gap: ".5rem" }}>
-              <Button onClick={() => decreaseQuantity(id)}>-</Button>
-              <div>
-                <span className="fs-2">{getItemQuantity(id)}</span> in cart
-              </div>
-              <Button onClick={() => increaseQuantity(id)}>+</Button>
-            </div>
-            <Button variant="danger" size="sm" onClick={() => removeItem(id)}>
-              Remove
+        <div className="mt-auto">
+          {getItemQuantity(id) === 0 ? (
+            <Button className="w-100" onClick={() => increaseQuantity(id)}>
+              + Add to Cart
             </Button>
-          </div>
-        )}
+          ) : (
+            <div
+              className="d-flex flex-column align-items-center"
+              style={{ gap: ".5rem" }}
+            >
+              <div className="d-flex" style={{ gap: ".5rem" }}>
+                <Button onClick={() => decreaseQuantity(id)}>-</Button>
+                <div>
+                  <span className="fs-2">{getItemQuantity(id)}</span> in cart
+                </div>
+                <Button onClick={() => increaseQuantity(id)}>+</Button>
+              </div>
+              <Button variant="danger" size="sm" onClick={() => removeItem(id)}>
+                Remove
+              </Button>
+            </div>
+          )}
+        </div>
       </Card.Body>
     </Card>
   );
